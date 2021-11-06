@@ -19,7 +19,8 @@ def janken
 
         if draw
           puts "あいこで！"
-        return true
+          drawer = draw
+        return true, drawer
 
         elsif win
           puts "あなたの勝ち！！"
@@ -34,8 +35,6 @@ def janken
         end
 
         next_game = true
-
-        puts "最初はグー！じゃんけん！"
 
         while next_game
           next_game, draw = janken
