@@ -1,5 +1,4 @@
 def janken
-
         puts "じゃんけん..."
         puts "[0] グー\n[1] チョキ\n[2] パー\n[3]やめる"
 
@@ -14,37 +13,37 @@ def janken
 
         win = (player_hand == 0 && program_hand == 1) || (player_hand == 1 && program_hand == 2) || (player_hand == 2 && program_hand == 0)
         draw = player_hand == program_hand
-        lose = player_hand != player_hand
+        lose = player_hand != program_hand
 
 
         if draw
           puts "あいこで！"
-          drawer = draw
-        return true, drawer
+        return true
 
         elsif win
           puts "あなたの勝ち！！"
-          winner = win
-        return false, winner
+        return false, "Win"
 
         else
           puts "あなたの負けです..."
-          loser = lose
-        return false, loser
+        return false, "Lose"
         end
-        end
+end
+
+        result = ""
 
         next_game = true
 
         while next_game
-          next_game, draw = janken
+          next_game, result= janken
         end
 
+
   #あっちむいてほい
-  def atmit(winner)
+def atmit(result)
         puts "あっちむいて..."
         puts "[0] うえ\n[1] した\n[2] みぎ\n[3]ひだり\n[4]やめる"
-        
+      
         player_dire = gets.to_i
         program_dire = rand(4)
         
@@ -53,45 +52,27 @@ def janken
         puts "ほい！"
         
         puts "あなた:#{direction[player_dire]}", "あいて:#{direction[program_dire]}"
-        
-    if player_dire == program_dire
+
+  if player_dire == program_dire && result == "Win"
         puts "あなたの勝ち！"
-    return true
+    return false
+
+  elsif player_dire == program_dire && result == "Lose"
+    puts "あなたの負け。。。"
+    return false
     
-    else
+  else
        puts "もういっかい！"
-    return false
-      end
-    end
-
-def atmit(loser)
-      puts "あっちむいて..."
-      puts "[0] うえ\n[1] した\n[2] みぎ\n[3]ひだり\n[4]やめる"
-      
-      player_dire = gets.to_i
-      program_dire = rand(4)
-      
-      direction= ["うえ", "した", "みぎ", "ひだり"]
-      
-      puts "ほい！"
-      
-      puts "あなた:#{direction[player_dire]}", "あいて:#{direction[program_dire]}"
-    
-  if player_dire == program_dire
-       puts "あなたの負け"
     return true
-    
-    else
-        puts "もういっかい！"
-    return false
-    end
   end
-
-
+end
 
   next_game = true
 
+  atmit(result)
+
   while next_game
     next_game = janken
-    
   end
+
+  
