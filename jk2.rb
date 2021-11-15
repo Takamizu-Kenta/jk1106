@@ -5,6 +5,10 @@ def janken
         player_hand = gets.to_i
         program_hand = rand(3)
 
+        if player_hand == 3
+        exit
+        end
+
         hands= ["グー", "チョキ", "パー"]
 
         puts "ぽい！"
@@ -35,7 +39,7 @@ end
         next_game = true
 
         while next_game
-          next_game, result= janken
+          next_game, result = janken
         end
 
 
@@ -46,6 +50,10 @@ def atmit(result)
       
         player_dire = gets.to_i
         program_dire = rand(4)
+
+        if player_dire == 4
+          exit
+        end
         
         direction= ["うえ", "した", "みぎ", "ひだり"]
         
@@ -62,17 +70,42 @@ def atmit(result)
     return false
     
   else
-       puts "もういっかい！"
+       puts "引き分け！"
     return true
   end
 end
 
-  next_game = true
 
   atmit(result)
 
-  while next_game
-    next_game = janken
+
+  puts "もういっかい挑戦しますか？"
+  puts "[0] 続ける\n[1] やめる\n"
+
+  continue = gets.to_i
+
+
+  if 
+    while continue == 0
+    janken
+    atmit(result)
+    end
+  else continue == 1
+    exit
   end
 
+
+#ｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰ
+
+  # next_game = ""
+
+  # while 
+  #   if next_game == "lose"
+  #   next_game = janken
+
+  #   else 
+  #     next_game = "win"
+  #     exit
+  #    end
+  # end
   
