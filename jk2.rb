@@ -75,24 +75,35 @@ def atmit(result)
   end
 end
 
-
   atmit(result)
 
+  
 
-  puts "もういっかい挑戦しますか？"
-  puts "[0] 続ける\n[1] やめる\n"
+# puts "もういっかい挑戦しますか？"
+# puts "[0] 続ける\n[1] やめる\n"
 
-  continue = gets.to_i
+# continue = gets.to_i
 
 
-  if 
-    while continue == 0
+#   if 
+#     while continue == 0
+#     janken
+#     atmit(result)
+#     end
+#   else continue == 1
+#     exit
+#   end
+
+#-----------------
+next_game = nil
+if
+  while next_game == true
     janken
     atmit(result)
-    end
-  else continue == 1
-    exit
   end
+else next_game == false
+  exit
+end
 
 
 #ｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰ
