@@ -34,14 +34,6 @@ def janken
         end
 end
 
-        # result = ""
-        # next_game = true
-
-        # while next_game
-        #   next_game, result = janken
-        # end
-
-
   #あっちむいてほい
 def atmit(result)
         puts "あっちむいて..."
@@ -80,11 +72,11 @@ next_game = true
 
 while next_game
   next_game, result = janken
+  at_result = nil
   if next_game == false
-    atmit(result)
+    at_result = atmit(result)
   end
-  # at_result = nil
-  if atmit(result) == true
-    janken
+  if at_result == true
+    next_game = true
   end
 end
