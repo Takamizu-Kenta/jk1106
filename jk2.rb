@@ -34,13 +34,12 @@ def janken
         end
 end
 
-        result = ""
+        # result = ""
+        # next_game = true
 
-        next_game = true
-
-        while next_game
-          next_game, result = janken
-        end
+        # while next_game
+        #   next_game, result = janken
+        # end
 
 
   #あっちむいてほい
@@ -75,48 +74,17 @@ def atmit(result)
   end
 end
 
-  atmit(result)
+result = ""
 
-  
+next_game = true
 
-# puts "もういっかい挑戦しますか？"
-# puts "[0] 続ける\n[1] やめる\n"
-
-# continue = gets.to_i
-
-
-#   if 
-#     while continue == 0
-#     janken
-#     atmit(result)
-#     end
-#   else continue == 1
-#     exit
-#   end
-
-#-----------------
-next_game = nil
-if
-  while next_game == true
-    janken
+while next_game
+  next_game, result = janken
+  if next_game == false
     atmit(result)
   end
-else next_game == false
-  exit
+  # at_result = nil
+  if atmit(result) == true
+    janken
+  end
 end
-
-
-#ｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰ
-
-  # next_game = ""
-
-  # while 
-  #   if next_game == "lose"
-  #   next_game = janken
-
-  #   else 
-  #     next_game = "win"
-  #     exit
-  #    end
-  # end
-  
